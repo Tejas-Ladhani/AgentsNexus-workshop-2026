@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "lookup_order",
+      "description": "Looks up one order by its identifier. Validate the identifier and return only the matching order summary.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "description": "The order identifier."
+          }
+        },
+        "required": ["order_id"],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

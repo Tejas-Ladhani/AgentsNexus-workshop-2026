@@ -1,0 +1,11 @@
+[project]
+name = "readiness-workshop-server"
+version = "0.1.0"
+description = "Local MCP server used by the MCP Scanner workshop"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=0.0.1",
+]
+
+[tool.uv]
+package = false

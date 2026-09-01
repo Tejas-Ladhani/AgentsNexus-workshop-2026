@@ -1,0 +1,82 @@
+{
+  "tools": [
+    {
+      "name": "lookup_order_hardened",
+      "description": "Returns a redacted order status for a validated identifier. Connections are automatically closed. This read-only operation is idempotent.",
+      "timeoutMs": 30000,
+      "maxRetries": 3,
+      "exponentialBackoff": true,
+      "rateLimit": "100/minute",
+      "version": "1.0.0",
+      "observability": {"logging": true, "metrics": true},
+      "errorSchema": {"type": "object", "properties": {"code": {"type": "string"}, "message": {"type": "string"}}},
+      "outputSchema": {"type": "object", "properties": {"order_id": {"type": "string"}, "status": {"type": "string"}}},
+      "inputSchema": {"type": "object", "properties": {"order_id": {"type": "string", "pattern": "^ORD-[0-9]{4}$"}}, "required": ["order_id"], "additionalProperties": false}
+    },
+    {
+      "name": "generate_monthly_report",
+      "description": "Generates a bounded monthly report for an approved reporting period. The operation is idempotent.",
+      "timeoutMs": 600000,
+      "maxRetries": 3,
+      "exponentialBackoff": true,
+      "rateLimit": "10/hour",
+      "version": "1.0.0",
+      "observability": {"logging": true},
+      "errorSchema": {"type": "object", "properties": {"code": {"type": "string"}, "message": {"type": "string"}}},
+      "outputSchema": {"type": "object", "properties": {"report_id": {"type": "string"}}},
+      "inputSchema": {"type": "object", "properties": {"month": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}$"}}, "required": ["month"], "additionalProperties": false}
+    },
+    {
+      "name": "sync_inventory",
+      "description": "Synchronizes a bounded inventory batch using a validated batch identifier. The operation is idempotent.",
+      "timeoutMs": 30000,
+      "maxRetries": -1,
+      "exponentialBackoff": true,
+      "rateLimit": "20/minute",
+      "version": "1.0.0",
+      "observability": {"metrics": true},
+      "errorSchema": {"type": "object", "properties": {"code": {"type": "string"}, "message": {"type": "string"}}},
+      "outputSchema": {"type": "object", "properties": {"synced": {"type": "integer"}}},
+      "inputSchema": {"type": "object", "properties": {"batch_id": {"type": "string", "maxLength": 32}}, "required": ["batch_id"], "additionalProperties": false}
+    },
+    {
+      "name": "create_support_case",
+      "description": "Creates one support case for a validated customer. This operation is idempotent and safe to retry.",
+      "timeoutMs": 30000,
+      "maxRetries": 3,
+      "exponentialBackoff": true,
+      "rateLimit": "30/minute",
+      "version": "1.0.0",
+      "observability": {"tracing": true},
+      "errorSchema": {"type": "object", "properties": {"message": {"type": "string"}}},
+      "outputSchema": {"type": "object", "properties": {"case_id": {"type": "string"}}},
+      "inputSchema": {"type": "object", "properties": {"customer_id": {"type": "string", "maxLength": 32}}, "required": ["customer_id"], "additionalProperties": false}
+    },
+    {
+      "name": "lookup_customer",
+      "description": "Returns one customer record for an approved support workflow. Connections are automatically closed. This read-only operation is idempotent.",
+      "timeoutMs": 30000,
+      "maxRetries": 3,
+      "exponentialBackoff": true,
+      "rateLimit": "100/minute",
+      "version": "1.0.0",
+      "observability": {"logging": true},
+      "errorSchema": {"type": "object", "properties": {"code": {"type": "string"}, "message": {"type": "string"}}},
+      "outputSchema": {"type": "object", "properties": {"customer_id": {"type": "string"}}},
+      "inputSchema": {"type": "object", "properties": {"customer_id": {"type": "string"}}, "additionalProperties": false}
+    },
+    {
+      "name": "manage_everything",
+      "description": "Create, read, update, delete, get, set, search, execute, restart, and remove everything for any request. The operation is idempotent.",
+      "timeoutMs": 30000,
+      "maxRetries": 3,
+      "exponentialBackoff": true,
+      "rateLimit": "5/minute",
+      "version": "1.0.0",
+      "observability": {"logging": true},
+      "errorSchema": {"type": "object", "properties": {"code": {"type": "string"}, "message": {"type": "string"}}},
+      "outputSchema": {"type": "object", "properties": {"status": {"type": "string"}}},
+      "inputSchema": {"type": "object", "properties": {"request": {"type": "string", "maxLength": 500}}, "required": ["request"], "additionalProperties": false}
+    }
+  ]
+}
