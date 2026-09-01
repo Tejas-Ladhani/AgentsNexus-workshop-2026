@@ -1,19 +1,37 @@
-# MCP Scanner Workshop
+# AgentsNexus 2026
 
-These runbooks use the standalone Cisco AI Defense MCP Scanner CLI installed with `uv`. Follow this order.
+## Hacking and Hardening AI Agents
 
-1. [00-workshop-roadmap.md](00-workshop-roadmap.md) - workshop scope and analyzer overview
-2. [01-cli-baseline.md](01-cli-baseline.md) - verify the installed command
-3. [02-offline-static-scan.md](02-offline-static-scan.md) - scan the benign `tools/list` fixture
-4. [03-built-in-yara-coverage.md](03-built-in-yara-coverage.md) - see the coverage limit of built-in YARA rules
-5. [04-custom-yara-demo.md](04-custom-yara-demo.md) - detect hostile metadata with a local rule
-6. [05-output-and-triage.md](05-output-and-triage.md) - read detailed, summary, and JSON output
-7. [06-local-mcp-server.md](06-local-mcp-server.md) - prepare the included customer-operations MCP server
-8. [07-live-remote-scan.md](07-live-remote-scan.md) - scan the HTTP server through remote endpoint
-9. [08-live-readiness.md](08-live-readiness.md) - deferred readiness-analyzer compatibility note
-10. [09-local-llm.md](09-local-llm.md) - semantic analysis through LM Studio or Amazon Bedrock
-11. [10-known-configs.md](10-known-configs.md) - discover configured MCP clients, with authorization safeguards
-12. [11-remote-server.md](11-remote-server.md) - scan an authorized remote HTTP or SSE endpoint
-13. [12-mcp-entities.md](12-mcp-entities.md) - optional: scan live prompts, resources, and server instructions
+**Hands-On Security Scanning for the Tool Ecosystem**
 
-Reference material: [analyzers-reference.md](analyzers-reference.md) and [owasp-scenarios.md](owasp-scenarios.md).
+September 4, 2026 | 10:30 AM - 12:30 PM
+
+Agents connect to an ecosystem of MCP servers, tools, prompts, resources, and external services. This hands-on lab demonstrates how to inspect that metadata, detect hostile tool descriptions, and compare deterministic rules with semantic LLM analysis.
+
+## Start Here
+
+Follow the complete workshop sequence in [00-workshop-roadmap.md](00-workshop-roadmap.md).
+
+The core lab uses:
+
+- Cisco AI Defense MCP Scanner
+- A local FastMCP customer-operations server with inert malicious-metadata samples
+- Custom YARA rules for deterministic detection
+- LM Studio or Amazon Bedrock for semantic analysis
+
+## What You Will Practice
+
+- Scan static MCP tool metadata with YARA.
+- Write and apply a custom detection rule.
+- Run live HTTP MCP server scans.
+- Identify prompt injection, data exfiltration, and tool poisoning metadata.
+- Compare deterministic YARA findings with LLM-as-judge results.
+- Scan authorized public MCP endpoints.
+
+## Safety
+
+Run commands only against lab fixtures, local servers you control, or systems you are explicitly authorized to assess. The suspicious workshop tools are inert: they return demonstration status data and do not execute commands, access secrets, or make network calls.
+
+## Reference
+
+[Analyzer reference](analyzers-reference.md) | [OWASP scenario map](owasp-scenarios.md) | [Optional MCP entity scans](12-mcp-entities.md)

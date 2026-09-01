@@ -1,6 +1,6 @@
-# MCP Scanner Workshop Roadmap
+# AgentsNexus 2026 Lab Guide
 
-This workshop uses Cisco AI Defense MCP Scanner as a CLI. Run commands only against lab fixtures, local servers you control, or remote systems you are authorized to assess.
+This guide contains the full hands-on sequence for **Hacking and Hardening AI Agents: Hands-On Security Scanning for the Tool Ecosystem**. It uses Cisco AI Defense MCP Scanner as a CLI. Run commands only against lab fixtures, local servers you control, or remote systems you are authorized to assess.
 
 ## Learning path
 
