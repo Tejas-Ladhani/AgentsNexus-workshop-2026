@@ -1,4 +1,10 @@
+![AgentsNexus 2026](media/agentsnexus-logo-with-year-dark.svg)
+---
 # AgentsNexus 2026
+
+Your agents are pulling from an unaudited ecosystem of third-party tools and skill servers. You have no visibility into what they can actually do. That's running completely unauthenticated code in production. The problem: Agents are shipping faster than security teams can secure them. Every tool, every skill, every MCP server is a potential attack surface. If you can't scan what your agent's tools are capable of, you're gambling.
+
+More here: [AgentsNexus Agenda](http://agentsnexus.io/agenda?type=workshop)
 
 ## Hacking and Hardening AI Agents
 
