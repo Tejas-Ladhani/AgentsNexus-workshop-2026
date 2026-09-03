@@ -24,7 +24,7 @@ The ready-made server is a functional customer-operations scan target with four 
 
 | `demo-tool-poisoning.yara` | Organization policy for hostile descriptions | LLM01 / Tool poisoning | YARA |
 
-The server also supports source and dependency scans without another MCP server: use `behavioral` on `labs/readiness-server` after LLM setup, and `vulnerable-package` on the same directory.
+The server also supports source and dependency scans without another MCP server: use `behavioral` on `labs/customer-operations-server` after LLM setup, and `vulnerable-package` on the same directory.
 
 ## What this server does not claim to cover
 

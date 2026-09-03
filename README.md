@@ -14,6 +14,41 @@ September 4, 2026 | 10:30 AM - 12:30 PM
 
 Agents connect to an ecosystem of MCP servers, tools, prompts, resources, and external services. This hands-on lab demonstrates how to inspect that metadata, detect hostile tool descriptions, and compare deterministic rules with semantic LLM analysis.
 
+## Setup (One Command)
+
+**Windows (PowerShell):**
+
+```powershell
+.\setup.ps1
+```
+
+Installs `uv` (if missing), pins Python `3.13`, ensures Visual Studio C++ Build Tools (MSVC), installs the `mcp-scanner` CLI, and syncs the local FastMCP workshop server's dependencies.
+
+Why MSVC on Windows: `mcp-scanner` depends on `yara-python` and a `litellm` component; Windows has no default C compiler, so if no prebuilt wheel matches your Python version, it compiles from source and needs the MSVC linker (`link.exe`). If `winget` cannot run on your machine (e.g., no admin rights), install the **Desktop development with C++** workload manually from [visualstudio.microsoft.com/visual-cpp-build-tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/), then rerun `.\setup.ps1`.
+
+**macOS / Linux:**
+
+```bash
+chmod +x setup.sh && ./setup.sh
+```
+
+Installs `uv` (if missing), pins Python `3.13`, installs the `mcp-scanner` CLI, and syncs the workshop server's dependencies. macOS/Linux normally use prebuilt `yara-python` wheels for Python 3.13, so no compiler is required; if a build from source is ever triggered, run `xcode-select --install` (macOS) first.
+
+Both scripts require no manual pip/venv steps.
+
+### Semantic Analysis: LM Studio or Amazon Bedrock (Module 9, optional)
+
+Module 9 needs one LLM provider, either is fine and both are documented in [09-local-llm.md](09-local-llm.md):
+
+| | LM Studio | Amazon Bedrock |
+| --- | --- | --- |
+| Runs | Locally, on your laptop | Hosted on AWS |
+| Data leaves your machine? | No | Yes, to AWS |
+| Needs | LM Studio app + a loaded instruct model, `16384`+ token context | An AWS account/API key with Bedrock access, `boto3` |
+| Result quality (this workshop) | Model-dependent, may miss findings | More consistent detections |
+
+Pick one before the session so you are not installing/configuring it live.
+
 ## Start Here
 
 Follow the complete workshop sequence in [00-workshop-roadmap.md](00-workshop-roadmap.md).

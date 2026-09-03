@@ -1,6 +1,6 @@
 # Module 6 - Ready-Made MCP Security Workshop Server
 
-The workshop includes one local MCP server in `labs/readiness-server`. Attendees do not need to build their own server. It is a functional customer-operations service with local order, status, support, and approval workflows.
+The workshop includes one local MCP server in `labs/customer-operations-server`. Attendees do not need to build their own server. It is a functional customer-operations service with local order, status, support, and approval workflows.
 
 ## What the server contains
 
@@ -13,7 +13,7 @@ The server includes four deliberately unsafe-looking tool descriptions so the li
 From the server directory, install FastMCP and dependencies:
 
 ```powershell
-Set-Location C:\workspace\test\labs\readiness-server
+Set-Location C:\workspace\test\labs\customer-operations-server
 uv sync
 ```
 

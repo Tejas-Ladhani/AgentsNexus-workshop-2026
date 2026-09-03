@@ -1,10 +1,10 @@
 {
   "servers": {
-    "readiness-workshop": {
+    "customer-operations-workshop": {
       "type": "stdio",
       "command": "uv",
       "args": ["run", "mcp", "run", "server.py"],
-      "cwd": "${workspaceFolder}/labs/readiness-server"
+      "cwd": "${workspaceFolder}/labs/customer-operations-server"
     }
   }
 }
