@@ -4,14 +4,27 @@ Run the same authorized scan with formats suited to different audiences.
 
 > Static-mode note: the `server_url` field or `Scan Target` display may contain the CLI default `https://mcp.deepwiki.com/mcp`. Treat the local file arguments as the real scan input; `static` does not connect to that URL.
 
+## Summary Output
+
+Use this concise view for a presentation or CI log:
+
 ```powershell
-# Workshop screen: concise finding list
 mcp-scanner --analyzers yara --rules-path .\labs\demo-rules --format summary static --tools .\labs\tools-suspicious.json
+```
 
-# Investigation: complete per-analyzer evidence and taxonomy mappings
+## Detailed Output
+
+Use this investigation view for complete per-analyzer evidence and taxonomy mappings:
+
+```powershell
 mcp-scanner --analyzers yara --rules-path .\labs\demo-rules --format detailed static --tools .\labs\tools-suspicious.json
+```
 
-# Automation: JSON envelope written to disk
+## Raw JSON Output
+
+Use this machine-readable envelope for audit records and automation:
+
+```powershell
 mcp-scanner --analyzers yara --rules-path .\labs\demo-rules --format raw --output .\labs\scan-results.json static --tools .\labs\tools-suspicious.json
 ```
 

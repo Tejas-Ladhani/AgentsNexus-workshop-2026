@@ -11,8 +11,8 @@ mcp-scanner --analyzers yara --rules-path .\labs\demo-rules --format detailed re
 ```
 
 Expected findings:
-- **Tools 1-6 (safe tools)**: Safe: Yes
-- **Tools 7-10 (unsafe metadata samples)**: HIGH severity findings from the custom YARA rule
+- **Tools 1-9 (safe operational and listing tools)**: Safe: Yes
+- **Tools 10-13 (unsafe metadata samples)**: HIGH severity findings from the custom YARA rule
   - `summarize_external_document`
   - `export_customer_archive`
   - `execute_maintenance_command`
@@ -22,4 +22,4 @@ The YARA rule matches tool descriptions containing both `"Ignore all previous in
 
 ## Next
 
-Continue with [09-local-llm.md](09-local-llm.md) for semantic analysis of the same live server. Module 8 is deferred because the installed scanner does not interpret FastMCP runtime timeout metadata.
+Continue with [09-llm-analysis.md](09-llm-analysis.md) for semantic analysis of the same live server. Module 8 is deferred because the installed scanner does not interpret FastMCP runtime timeout metadata.

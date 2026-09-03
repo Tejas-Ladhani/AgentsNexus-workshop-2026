@@ -9,7 +9,7 @@ mcp-scanner --analyzers yara,prompt_defense --format detailed remote --server-ur
 
 ## Public workshop targets
 
-These public MCP servers can be scanned without credentials. Start with `yara` for a deterministic metadata scan, or use `llm` after configuring either LM Studio or Bedrock in [09-local-llm.md](09-local-llm.md).
+These public MCP servers can be scanned without credentials. Start with `yara` for a deterministic metadata scan, or use `llm` after configuring either LM Studio or Bedrock in [09-llm-analysis.md](09-llm-analysis.md).
 
 ### Context7
 

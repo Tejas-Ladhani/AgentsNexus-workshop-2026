@@ -38,7 +38,7 @@ Both scripts require no manual pip/venv steps.
 
 ### Semantic Analysis: LM Studio or Amazon Bedrock (Module 9, optional)
 
-Module 9 needs one LLM provider, either is fine and both are documented in [09-local-llm.md](09-local-llm.md):
+Module 9 needs one LLM provider, either is fine and both are documented in [09-llm-analysis.md](09-llm-analysis.md):
 
 | | LM Studio | Amazon Bedrock |
 | --- | --- | --- |

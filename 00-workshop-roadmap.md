@@ -12,7 +12,7 @@ This guide contains the full hands-on sequence for **Hacking and Hardening AI Ag
 6. [06-local-mcp-server.md](06-local-mcp-server.md) - start the ready-made customer-operations HTTP MCP server with FastMCP
 7. [07-live-remote-scan.md](07-live-remote-scan.md) - scan the HTTP server through remote endpoint
 8. [08-live-readiness.md](08-live-readiness.md) - deferred: scanner readiness heuristics are incompatible with standard FastMCP metadata
-9. [09-local-llm.md](09-local-llm.md) - semantic analysis through LM Studio or Amazon Bedrock
+9. [09-llm-analysis.md](09-llm-analysis.md) - semantic analysis through LM Studio or Amazon Bedrock
 10. [10-known-configs.md](10-known-configs.md) - discover configured MCP clients, with authorization safeguards
 11. [11-remote-server.md](11-remote-server.md) - scan an authorized remote HTTP or SSE MCP endpoint
 12. [12-mcp-entities.md](12-mcp-entities.md) - optional: scan live prompts, resources, and server instructions

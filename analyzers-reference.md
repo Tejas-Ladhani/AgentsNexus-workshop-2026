@@ -50,7 +50,7 @@ Limitation: heuristics infer evidence from the supplied metadata or server; they
 
 `llm` performs semantic analysis of MCP tools, prompts, resources, and instructions. It can identify concerns that exact YARA patterns miss, such as deceptive descriptions and subtle tool poisoning.
 
-Requirements: an LLM endpoint plus `MCP_SCANNER_LLM_MODEL` and provider authentication. A local OpenAI-compatible endpoint such as LM Studio can use `MCP_SCANNER_LLM_API_KEY`; Amazon Bedrock can use `MCP_SCANNER_LLM_API_KEY`, `AWS_BEARER_TOKEN_BEDROCK`, or standard AWS credentials. See [09-local-llm.md](09-local-llm.md).
+Requirements: an LLM endpoint plus `MCP_SCANNER_LLM_MODEL` and provider authentication. A local OpenAI-compatible endpoint such as LM Studio can use `MCP_SCANNER_LLM_API_KEY`; Amazon Bedrock can use `MCP_SCANNER_LLM_API_KEY`, `AWS_BEARER_TOKEN_BEDROCK`, or standard AWS credentials. See [09-llm-analysis.md](09-llm-analysis.md).
 
 Use it for: deeper review after deterministic checks, and for workshop comparisons between pattern matching and semantic interpretation.
 
