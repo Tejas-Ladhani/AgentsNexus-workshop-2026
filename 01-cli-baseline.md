@@ -3,7 +3,6 @@
 Run this from the lab workspace:
 
 ```powershell
-Set-Location C:\workspace\test
 mcp-scanner --help
 ```
 

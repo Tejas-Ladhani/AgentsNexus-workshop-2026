@@ -3,7 +3,6 @@
 Scan the separate suspicious fixture with the scanner's built-in rules:
 
 ```powershell
-Set-Location C:\workspace\test
 mcp-scanner --analyzers yara --format detailed static --tools .\labs\tools-suspicious.json
 ```
 

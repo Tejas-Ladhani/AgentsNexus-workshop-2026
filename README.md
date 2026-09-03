@@ -51,7 +51,7 @@ Pick one before the session so you are not installing/configuring it live.
 
 ## Start Here
 
-Follow the complete workshop sequence in [00-workshop-roadmap.md](00-workshop-roadmap.md).
+Open the repository in VS Code or any IDE of your choice and run lab commands from the repository root. Follow the complete workshop sequence in [00-workshop-roadmap.md](00-workshop-roadmap.md).
 
 The core lab uses:
 

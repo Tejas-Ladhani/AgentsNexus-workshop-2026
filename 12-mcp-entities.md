@@ -5,8 +5,6 @@ Tools are not the only MCP metadata surface. This optional module scans the live
 ## Prompts
 
 ```powershell
-Set-Location C:\workspace\test
-
 mcp-scanner --analyzers yara --format detailed prompts --server-url http://127.0.0.1:8000/mcp
 ```
 

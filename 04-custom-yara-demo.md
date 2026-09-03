@@ -29,7 +29,6 @@ rule Demo_Tool_Poisoning
 ## Run the scan
 
 ```powershell
-Set-Location C:\workspace\test
 mcp-scanner --analyzers yara --rules-path .\labs\demo-rules --format detailed static --tools .\labs\tools-suspicious.json
 ```
 

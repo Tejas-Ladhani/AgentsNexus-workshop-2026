@@ -3,7 +3,6 @@
 Review the result before using it against configurations you do not own. This command can start configured local MCP servers or connect to their remote endpoints.
 
 ```powershell
-Set-Location C:\workspace\test
 mcp-scanner --scan-known-configs --analyzers yara --format summary
 ```
 

@@ -5,7 +5,6 @@ This lab scans a saved MCP `tools/list` response. It makes no network request an
 > Note: current CLI output can display `https://mcp.deepwiki.com/mcp` as the scan target when `--server-url` was not supplied. In `static` mode this is only a default report label; the scanner reads the files passed through `--tools`, `--prompts`, or `--resources` and does not connect to that URL.
 
 ```powershell
-Set-Location C:\workspace\test
 mcp-scanner --analyzers yara --format detailed static --tools .\labs\tools.json
 ```
 

@@ -10,11 +10,10 @@ The server includes four deliberately unsafe-looking tool descriptions so the li
 
 ## One-time preparation
 
-From the server directory, install FastMCP and dependencies:
+From the repository root, install FastMCP and dependencies:
 
 ```powershell
-Set-Location C:\workspace\test\labs\customer-operations-server
-uv sync
+uv sync --directory labs/customer-operations-server
 ```
 
 ## Start the HTTP server
@@ -22,7 +21,7 @@ uv sync
 Launch the server on HTTP:
 
 ```powershell
-uv run server.py
+uv run --directory labs/customer-operations-server server.py
 ```
 
 The server will print:

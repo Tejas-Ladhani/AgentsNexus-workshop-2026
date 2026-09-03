@@ -35,7 +35,6 @@ Supply chain, data or model poisoning, output handling, system prompt leakage, v
 After preparation in [06-local-mcp-server.md](06-local-mcp-server.md) and starting the server, scan all remote tool definitions with deterministic checks:
 
 ```powershell
-Set-Location C:\workspace\test
 mcp-scanner --analyzers yara --rules-path .\labs\demo-rules --format detailed remote --server-url http://127.0.0.1:8000/mcp
 ```
 
