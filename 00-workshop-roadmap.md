@@ -16,6 +16,7 @@ This guide contains the full hands-on sequence for **Hacking and Hardening AI Ag
 10. [10-known-configs.md](10-known-configs.md) - discover configured MCP clients, with authorization safeguards
 11. [11-remote-server.md](11-remote-server.md) - scan an authorized remote HTTP or SSE MCP endpoint
 12. [12-mcp-entities.md](12-mcp-entities.md) - optional: scan live prompts, resources, and server instructions
+13. [13-behavioral-analysis.md](13-behavioral-analysis.md) - compare source implementation with declared tool intent
 
 Advanced follow-up: use `behavioral` for source-level behavior versus declared intent, and `vulnerable-package`, `npm-scan`, or `pypi-scan` for supply-chain review. See [analyzers-reference.md](analyzers-reference.md) and [owasp-scenarios.md](owasp-scenarios.md). An A2A lab would be a separate future track; this MCP Scanner version has no A2A or agent-skill scan mode.
 

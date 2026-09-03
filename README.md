@@ -86,6 +86,7 @@ The core lab uses:
 - Identify prompt injection, data exfiltration, and tool poisoning metadata.
 - Compare deterministic YARA findings with LLM-as-judge results.
 - Scan authorized public MCP endpoints.
+- Compare source behavior with declared tool intent.
 
 ## Safety
 

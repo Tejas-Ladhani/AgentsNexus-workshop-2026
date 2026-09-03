@@ -76,6 +76,8 @@ Requirements: an LLM configuration. Invoke it with a path:
 mcp-scanner behavioral .\path\to\mcp-server --format detailed
 ```
 
+See the workshop exercise in [13-behavioral-analysis.md](13-behavioral-analysis.md).
+
 Use it for: detecting discrepancies such as a benign-looking tool description paired with code that accesses secrets, performs undeclared network calls, or executes commands.
 
 Limitation: it is source-based analysis, so it cannot see closed-source dependencies or behavior created only at runtime.

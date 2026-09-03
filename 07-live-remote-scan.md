@@ -11,8 +11,8 @@ mcp-scanner --analyzers yara --rules-path .\labs\demo-rules --format detailed re
 ```
 
 Expected findings:
-- **Tools 1-9 (safe operational and listing tools)**: Safe: Yes
-- **Tools 10-13 (unsafe metadata samples)**: HIGH severity findings from the custom YARA rule
+- **Tools 1-10 (safe operational, listing, and mismatch tools)**: Safe: Yes
+- **Tools 11-14 (unsafe metadata samples)**: HIGH severity findings from the custom YARA rule
   - `summarize_external_document`
   - `export_customer_archive`
   - `execute_maintenance_command`
