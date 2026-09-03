@@ -49,6 +49,24 @@ Module 9 needs one LLM provider, either is fine and both are documented in [09-l
 
 Pick one before the session so you are not installing/configuring it live.
 
+### Install LM Studio
+
+If LM Studio is not already installed, download it from the official [LM Studio download page](https://lmstudio.ai/download):
+
+- Windows: download and run the Windows installer.
+- macOS: download and open the macOS installer, then move LM Studio to Applications if prompted.
+- Linux: use the Linux download provided on the download page and follow its installation instructions.
+
+Open LM Studio, download the instruct model `qwen/qwen3-4b-2507`, and load it with a context length of at least `16384` tokens. In **Developer / Local Server**, select the model, set the port to `1234`, and start the server.
+
+Verify that the local API is available:
+
+```powershell
+curl http://localhost:1234/v1/models
+```
+
+The complete provider configuration and scan commands are in [09-llm-analysis.md](09-llm-analysis.md).
+
 ## Start Here
 
 Open the repository in VS Code or any IDE of your choice and run lab commands from the repository root. Follow the complete workshop sequence in [00-workshop-roadmap.md](00-workshop-roadmap.md).

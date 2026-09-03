@@ -1,6 +1,6 @@
 # Module 12 - Optional: Scan Prompts, Resources, and Instructions
 
-Tools are not the only MCP metadata surface. This optional module scans the live FastMCP server's prompt, resource template, and server instructions after completing [06-local-mcp-server.md](06-local-mcp-server.md).
+Tools are not the only MCP metadata surface. This optional module scans the live FastMCP server's three prompts, one resource, two resource templates, and server instructions after completing [06-local-mcp-server.md](06-local-mcp-server.md).
 
 ## Prompts
 

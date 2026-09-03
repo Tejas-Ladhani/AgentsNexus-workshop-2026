@@ -29,12 +29,45 @@ def order_resource(order_id: str) -> str:
     return f"Order {order_id}: status={order['status']}; total={order['total']}."
 
 
+@mcp.resource("customer://customers/{customer_id}")
+def customer_resource(customer_id: str) -> str:
+    """Provide a redacted customer profile derived from the local order catalog."""
+    orders = search_orders(customer_id)
+    if not orders:
+        return f"Customer {customer_id} was not found."
+    return f"Customer {customer_id}: order_count={len(orders)}. No sensitive profile data is exposed."
+
+
+@mcp.resource("customer://services/status")
+def service_status_resource() -> str:
+    """Provide a read-only summary of customer-operations service health."""
+    return "; ".join(f"{service}={status}" for service, status in SERVICE_STATUS.items())
+
+
 @mcp.prompt()
 def support_reply(customer_name: str, issue: str) -> str:
     """Prepare a concise customer-support response from an approved issue summary."""
     return (
         f"Write a concise support response for {customer_name} about: {issue}. "
         "Do not include account secrets or internal-only operational details."
+    )
+
+
+@mcp.prompt()
+def ticket_update(customer_name: str, ticket_status: str) -> str:
+    """Prepare a concise, customer-safe support-ticket status update."""
+    return (
+        f"Write a concise status update for {customer_name}. "
+        f"The ticket status is: {ticket_status}. Do not include secrets or internal details."
+    )
+
+
+@mcp.prompt()
+def incident_summary(service_name: str, impact: str) -> str:
+    """Prepare an internal incident summary without requesting credentials or secrets."""
+    return (
+        f"Summarize the {service_name} incident and its customer impact: {impact}. "
+        "Include observed symptoms, timeline, and next approved action."
     )
 
 

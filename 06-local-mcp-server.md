@@ -4,7 +4,7 @@ The workshop includes one local MCP server in `labs/customer-operations-server`.
 
 ## What the server contains
 
-`server.py` uses **FastMCP** and exposes tools, a prompt, a resource, and server instructions via HTTP on `localhost:8000`. The customer-operations tools cover order lookup and search, service status, customer-summary export, support-ticket creation, and approval-based account-action requests. It uses local in-memory records, so it behaves like an application without external credentials or services.
+`server.py` uses **FastMCP** and exposes 13 tools, 3 prompts, 1 resource, 2 resource templates, and server instructions via HTTP on `localhost:8000`. The customer-operations tools cover order lookup and search, service status, customer-summary export, support-ticket creation, and approval-based account-action requests. It uses local in-memory records, so it behaves like an application without external credentials or services.
 
 The server includes three additional safe listing tools for exploration, plus four deliberately unsafe-looking tool descriptions so the live remote scan has observable findings. Their Python implementations are inert: they return local status data only, with no network calls, secret access, file access, or command execution. The offline fixtures remain the deterministic custom-YARA exercise.
 
@@ -39,6 +39,6 @@ To explore the server interactively in MCP Inspector, stop the HTTP process or u
 uv run --directory labs/customer-operations-server mcp dev server.py
 ```
 
-In MCP Inspector, confirm that the server exposes 13 tools, the `support_reply` prompt, and the `customer://orders/{order_id}` resource. Explore `list_services`, `list_customer_ids`, and `list_orders` first, then call `lookup_order` with `ORD-1001`; the response should include `CUST-100`, `shipped`, and `89.00`.
+In MCP Inspector, confirm that the server exposes 13 tools, the `support_reply`, `ticket_update`, and `incident_summary` prompts, and the `customer://orders/{order_id}`, `customer://customers/{customer_id}`, and `customer://services/status` resources. The first two are resource templates. Explore `list_services`, `list_customer_ids`, and `list_orders` first, then call `lookup_order` with `ORD-1001`; the response should include `CUST-100`, `shipped`, and `89.00`.
 
 Close MCP Inspector when finished, then start the HTTP server again before continuing to Module 7.

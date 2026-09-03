@@ -6,7 +6,9 @@ Use the custom YARA rule from Module 7 for deterministic detection. Semantic res
 
 ## Option A: Local LM Studio
 
-LM Studio keeps tool metadata on your machine. Load an instruct model with a context length of at least `16384` tokens, then start its local server on port `1234`. The scanner uses a fixed analysis prompt that can exceed smaller context windows.
+LM Studio keeps tool metadata on your machine.
+
+Complete the installation and local server setup in the README first. The scanner uses a fixed analysis prompt that can exceed smaller context windows.
 
 Confirm the loaded model identifier:
 

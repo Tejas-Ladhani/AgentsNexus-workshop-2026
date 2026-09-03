@@ -18,8 +18,8 @@ The ready-made server is a functional customer-operations scan target with four 
 | Entity | Server item | Scanner command family |
 | --- | --- | --- |
 | Tool | Customer operations tools | `remote` on HTTP endpoint |
-| Prompt | `support_reply` | `remote` on HTTP endpoint |
-| Resource | `customer://orders/{order_id}` | `remote` on HTTP endpoint |
+| Prompt | `support_reply`, `ticket_update`, `incident_summary` | `remote` on HTTP endpoint |
+| Resource | Three customer resources | `remote` on HTTP endpoint |
 | Server instructions | Customer Operations instructions | `remote` on HTTP endpoint |
 
 | `demo-tool-poisoning.yara` | Organization policy for hostile descriptions | LLM01 / Tool poisoning | YARA |
