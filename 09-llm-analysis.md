@@ -43,7 +43,7 @@ Clear the local endpoint settings, select a Bedrock model you have enabled in yo
 Remove-Item Env:MCP_SCANNER_LLM_BASE_URL -ErrorAction SilentlyContinue
 
 $env:MCP_SCANNER_LLM_MODEL = "bedrock/us.anthropic.claude-haiku-4-5-20251001-v1:0"
-$env:AWS_REGION = "ap-southeast-2"
+$env:AWS_REGION = "us-east-1"
 ```
 
 For Amazon Bedrock API-key authentication, use exactly one of the following environment variables with an `ABSK...` Bedrock API key. Do not put the key in a file or share it in chat. An AWS access key ID such as `AKIA...` is not a Bedrock API key.
