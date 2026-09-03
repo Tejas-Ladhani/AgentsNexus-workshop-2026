@@ -15,6 +15,21 @@ if ! command -v uv >/dev/null 2>&1; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
+UV_BIN="$HOME/.local/bin"
+case ":${PATH}:" in
+    *":${UV_BIN}:"*) ;;
+    *) export PATH="${UV_BIN}:${PATH}" ;;
+esac
+
+if [ -n "${ZSH_VERSION:-}" ]; then
+    PROFILE="$HOME/.zprofile"
+else
+    PROFILE="$HOME/.profile"
+fi
+if ! grep -Fqx 'export PATH="$HOME/.local/bin:$PATH"' "$PROFILE" 2>/dev/null; then
+    printf '\nexport PATH="$HOME/.local/bin:$PATH"\n' >> "$PROFILE"
+fi
+
 # mcp-scanner is only validated on Python 3.13. macOS/Linux ship prebuilt
 # yara-python wheels for 3.13, so no compiler toolchain is normally required.
 echo "Installing Python 3.13 (pinned; mcp-scanner does not support 3.14+)..."

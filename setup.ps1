@@ -17,6 +17,13 @@ if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
     $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"
 }
 
+$uvBin = "$env:USERPROFILE\.local\bin"
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if (($userPath -split ";") -notcontains $uvBin) {
+    [Environment]::SetEnvironmentVariable("Path", "$uvBin;$userPath", "User")
+}
+$env:Path = "$uvBin;$env:Path"
+
 # mcp-scanner is only validated on Python 3.13. A newer default interpreter (e.g. 3.14)
 # causes yara-python to fall back to a source build.
 Write-Host "Installing Python 3.13 (pinned; mcp-scanner does not support 3.14+)..." -ForegroundColor Yellow
